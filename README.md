@@ -7,6 +7,10 @@ https://oshpark.com/shared_projects/QC1GjVG6
 It is based on the reverse engineering figured out by Monroe Wiliams.  See:
 https://github.com/monroewilliams/softub/blob/master/hardware/reverse-engineering.md
 
+If you are looking for a more plug-and-play solution, check out my replacement firmware:
+https://steve1066d.github.io/devore.tubs/
+
+
 ### It has the following features:
 * It provides WiFi support to display or modify temperature.
 * It keeps the temperature setting even after a power loss.
@@ -35,7 +39,7 @@ https://github.com/monroewilliams/softub/blob/master/hardware/reverse-engineerin
 * It determines if the pump is on by using the filter and heat lights, in additon to recent filter button presses. It also listens for mqtt messages power_on and power_off, which I've configured in home assistant to return if the power usage indicates that the pump is on.
 
 ### Work left to do:
-* While there is support for handling controllers after 2011 that resond with "P" when up to temp, it hasn't been tested. If anyone has a board they could loan me I could ensure it works corerctly.
+* I haven't done much testing on the boards that show "P" when up to temp.  If there is an issue, it can be worked around by jumpering JP3 on the Softub board.  This will make it work like the older boards.  Removing the jumper returns to the normal behavior.
 * Allow temporarily turning off the pump by pressing the Jets button even when it is calling for heat.  This might be able to be done by temporarily raising the reported temperature.
 * The temperature probe on a hot tub isn't in the best location, so its hard to use the probe to come up with the actual temperature. The stock controller seems to turn on when it was 2 degrees below the set point and off when it reached the set point. But because the probe is in the pump and not in the tub, it doesn't really reflect the real temperatures. Once I get more data I'm hoping to more accurately estimate the temperature.  For now it just reports the temp of the probe.
 * Provide an accurate estimate of the pool temp even when the pool is off. I'd like to avoid having to show the "P", and instead just always show the temperature.
@@ -45,5 +49,4 @@ https://github.com/monroewilliams/softub/blob/master/hardware/reverse-engineerin
 * Add the 12hr mode and economy modes that were added with the post 2011 controller boards.
 * Allow replacing the existing temperature probes with other easier to obtain probes.  For example, using $10 1-wire digital probe could work just as well as the expensive replacement official probes. This could be done with just a firmware change.
 * Add the ability to use different top units, such as a much cheaper Balboa display.
-* Maybe make a kit to sell if there's an interest.
 
