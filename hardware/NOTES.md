@@ -10,4 +10,5 @@ Here's a link to a Digikey cart with all the parts:
 https://www.digikey.com/short/1w793r53
 
 To install firmware on the ESP32-S3, use these directions
-https://wiki.seeedstudio.com/XIAO_ESP32S3_CircuitPython/
+ https://wiki.seeedstudio.com/xiao_esp32s3_project_circuitpython/
+ 
